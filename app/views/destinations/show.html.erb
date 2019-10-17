@@ -1,0 +1,12 @@
+<h1><%= @destination.name %></h1>
+<h6>Number of Posts: <%=@destination.last_five_posts.size%></h6>
+<% unless @destination.posts.empty? %>
+    <%@destination.last_five_posts.each do |post| %>
+        <h4>Recent Title: <%= post.title%></h4> <br>
+        <h4>Recent Content: <%= post.content%></h4> <br>
+        <hr>
+        <%end %>
+        <h4>Featured Post: <%=link_to @destination.featured_post.title, post_path(@destination) %></h4>
+        <h4>Average Age of Bloggers: <%= @destination.average_age_bloggers%></h4>
+<% end %>
+<%= link_to 'All destinations', destinations_path%> 

@@ -18,7 +18,7 @@ class Destination < ApplicationRecord
     end
 
     def average_age_bloggers
-        self.bloggers.map{|blogger|blogger.age}.inject{|sum, n| sum + n}/self.bloggers.count
+        self.bloggers.map{|blogger|blogger.age}.uniq.inject{|sum, n| sum + n}/self.bloggers.count
     end
 
 
