@@ -1,0 +1,9 @@
+<h1><%= @post.title %></h1>
+
+<h3><%= @post.content %></h3>
+<h4><%= link_to @post.blogger.name, blogger_path(@post.blogger_id) %></h4>
+
+
+
+
+<%= link_to 'All posts', posts_path%> 

@@ -1,0 +1,10 @@
+<h1>Create Post</h1>
+
+<%= form_for @post do |f| %>
+Title: <%= f.text_field :title %> <br> <br>
+Bloggers: <%= f.collection_select :blogger_id, @bloggers, :id, :name, prompt: true %> <br> <br>
+Destinations: <%= f.collection_select :destination_id, @destinations, :id, :name, prompt: true %> <br> <br> 
+Content: <%= f.text_area :content %> <br> <br> <br>
+<%= f.submit %>
+
+<% end %>

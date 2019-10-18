@@ -1,8 +1,9 @@
 <h1><%= @blogger.name %></h1>
 
 
-<% unless @blogger.posts.empty? %>
+<% unless @blogger.posts.empty? || @blogger == nil %>
     <h4>Total Likes: <%= @blogger.total_likes %></h4>
-    <h4>Featured Post: <%=link_to @blogger.featured_post.title, post_path(@blogger) %></h4>
-<% end %>
+    <h4>Featured Post: <%=link_to @blogger.featured_post.title, post_path(@blogger.featured_post.id) %></h4>
+
+    <% end %>
 <%= link_to 'All Bloggers', bloggers_path%> 
